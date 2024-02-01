@@ -6,4 +6,4 @@
   <li>react-router-dom</li>
   <li>redux/toolkit</li>
 </ul>
-<h3>As a collector, I decided to use:<div style={{color:"red"}}>Webpack</div></h3>
+<h3>As a collector, I decided to use:<strong>Webpack</strong></h3>
