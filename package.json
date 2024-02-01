@@ -1,10 +1,9 @@
 {
   "name": "todo-react",
   "version": "1.0.0",
-  "description": "<h1>I decided to write a task list application using:</h1> <ul>   <li>React</li>   <li>react-dom</li>   <li>react-router-dom</li>   <li>redux/toolkit</li> </ul> <h3>As a collector, I decided to use : <strong>Webpack</strong></h3>",
   "main": "index.js",
   "scripts": {
-    "dev":"webpack serve"
+    "dev": "webpack serve"
   },
   "keywords": [],
   "author": "Kotsev Asker",
@@ -20,7 +19,11 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.21.3",
+    "uuid": "^9.0.1"
   }
 }
