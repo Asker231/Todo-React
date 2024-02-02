@@ -1,0 +1,9 @@
+.cardUser{
+
+    width: 200px;
+    min-height: 200px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 12px;
+    padding: 5px;
+}

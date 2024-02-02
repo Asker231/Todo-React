@@ -1,15 +1,21 @@
 import React from 'react'
 import style from './header.module.css'
 import userIcon from '../../icons/UserIcon/UserIcon.svg'
+import {useState} from 'react'
+import  CardUser  from "../CardUser/CardUser.jsx";
 
 function Header() {
+    const[openCard,setOpen] = useState(false)
     const[nav,setNav] = useState([
         {path:"/",view:"Главная"},
-        {path:"/",view:"Все задачи"},
-        {path:"/",view:"Настройки"},
-        {path:"/",view:"О нас"},
+        {path:"#",view:"Все задачи"},
+        {path:"#",view:"Настройки"},
+        {path:"#",view:"О нас"},
 
     ])
+    function OpenCardUser() {
+        setOpen(!openCard)
+    }
   return (
     <div className={style.header}>
        <span className={style.logo}>Todo</span>
@@ -17,15 +23,18 @@ function Header() {
         <div className={style.left}>
         <div  className={style.nav}>
         {
-                nav.map((el)=>{
-                    return <a href={el.path}>{el.view}</a>
-                })
-            }
+         nav.map((el)=>{
+            return <a href={el.path}>{el.view}</a>
+            })
+        }
        </div>
-       <div className={style.user}>
+       <div onClick={()=>OpenCardUser()}  className={style.user}>
        <img src={userIcon}/>
        </div>
-        </div>
+       </div>
+       <div style={{top:openCard ? "60px" : "-260px" ,opacity:openCard?"1":"0"}} className={style.cardUser}>
+        <CardUser/> 
+       </div>
     </div>
   )
 }
