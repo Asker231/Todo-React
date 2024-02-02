@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const loader = require('css-loader')
 
 module.exports = {
     mode:"development",
@@ -9,14 +11,35 @@ module.exports = {
         path:path.resolve(__dirname,'dist'),
         clean:true
     },
-    plugins:[new HtmlWebpackPlugin({template:path.resolve(__dirname,'public','index.html')})],
+    plugins:[new HtmlWebpackPlugin({template:path.resolve(__dirname,'public','index.html')}), new webpack.HotModuleReplacementPlugin()],
     module:{
         rules:[
             {
                 test:/\.jsx?$/,
                 exclude:/node_modules/,
                 use:'babel-loader'
-            }
+            },
+            {
+              test: /\.(png|jpe?g|gif|svg)$/i,
+              use: [
+                {
+                  loader: 'file-loader',
+                },
+              ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  'style-loader',
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      importLoaders: 1,
+                      modules: true
+                    }
+                  }
+                ]
+              }
         ]
     },
     resolve:{
