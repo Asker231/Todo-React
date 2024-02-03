@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './header.module.css'
-import userIcon from '../../icons/UserIcon/UserIcon.svg'
+import userImage from '../../assets/user.jpeg'
 import {useState} from 'react'
 import  CardUser  from "../CardUser/CardUser.jsx";
 
@@ -19,7 +19,6 @@ function Header() {
   return (
     <div className={style.header}>
        <span className={style.logo}>Todo</span>
-        
         <div className={style.left}>
         <div  className={style.nav}>
         {
@@ -29,7 +28,7 @@ function Header() {
         }
        </div>
        <div onClick={()=>OpenCardUser()}  className={style.user}>
-       <img src={userIcon}/>
+       <img src={userImage}/>
        </div>
        </div>
        <div style={{top:openCard ? "60px" : "-260px" ,opacity:openCard?"1":"0"}} className={style.cardUser}>
