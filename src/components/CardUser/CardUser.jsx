@@ -7,7 +7,7 @@ function CardUser() {
       <div className={style.cardUser}>
          <div className={style.hstack}>
             <div className={style.todos}>
-               <span>Todos</span>
+               <span>Posts</span>
                <span style={{ color: '#C2E88D' }}>+40</span>
             </div>
             <div className={style.logo}>
