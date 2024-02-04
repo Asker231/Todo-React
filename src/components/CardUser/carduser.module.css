@@ -4,7 +4,7 @@
    position: relative;
    width: 200px;
    min-height: 200px;
-   background: linear-gradient(to bottom, #818df8 50%,  #eff1f4 50%);
+   background: linear-gradient(to bottom, #818df8 50%, #eff1f4 50%);
    z-index: 1;
    border-radius: 12px;
    padding: 2px;
