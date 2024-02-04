@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-   mode: 'development',
+   mode: 'production',
    entry: path.resolve(__dirname, 'src', 'index.jsx'),
    output: {
       filename: '[name].[contenthash].js',

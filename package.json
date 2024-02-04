@@ -3,6 +3,7 @@
    "version": "2.0.0",
    "main": "index.js",
    "scripts": {
+      "build":"webpack",
       "dev": "webpack serve",
       "prettier": "prettier . --write"
    },
