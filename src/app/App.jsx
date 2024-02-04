@@ -1,26 +1,16 @@
 import React, { useEffect } from 'react';
 import style from './app.module.css';
 import Header from '../components/Header/Header';
-import { getData } from '../api/getData.js';
+import Home from '../pages/HomePage/Home.jsx';
 
 function App() {
-   useEffect(() => {
-      async function FetchDataPost() {
-         try {
-            let result = await getData(
-               'https://jsonplaceholder.typicode.com/todos',
-            );
-            console.log(result);
-            return result;
-         } catch (error) {
-            console.log(error);
-         }
-      }
-      FetchDataPost();
-   }, []);
    return (
       <div className={style.app}>
          <Header />
+         <div className={style.section}>
+         <Home/>
+
+         </div>
       </div>
    );
 }

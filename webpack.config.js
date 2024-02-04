@@ -19,13 +19,46 @@ module.exports = {
    module: {
       rules: [
          {
+            test: /\.html$/i,
+            loader: "html-loader",
+            options: {
+              sources: {
+                list: [
+                  // All default supported tags and attributes
+                  "...",
+                  {
+                    tag: "img",
+                    attribute: "data-src",
+                    type: "src",
+                  },
+                  {
+                    tag: "img",
+                    attribute: "data-srcset",
+                    type: "srcset",
+                  },
+                ],
+                urlFilter: (attribute, value, resourcePath) => {
+                  // The `attribute` argument contains a name of the HTML attribute.
+                  // The `value` argument contains a value of the HTML attribute.
+                  // The `resourcePath` argument contains a path to the loaded HTML file.
+    
+                  if (/example\.pdf$/.test(value)) {
+                    return false;
+                  }
+    
+                  return true;
+                },
+              },
+            },
+          },
+         {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             use: 'babel-loader',
          },
          {
             test: /\.(png|jpe?g|gif|svg)$/i,
-            use: ['file-loader'],
+            use: ['url-loader'],
          },
          {
             test: /\.css$/,

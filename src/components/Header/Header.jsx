@@ -44,7 +44,10 @@ function Header() {
       <div className={style.header}>
          <div className={style.wrap}>
             <span className={style.logo}>KNews</span>
-            <TextField />
+            <div id={style.textf}>
+            <TextField  />
+
+            </div>
             <div className={style.left}>
                <div className={style.nav}>
                   {nav.map((el, ind) => {
@@ -60,11 +63,6 @@ function Header() {
                   })}
                </div>
                <div onClick={() => OpenCardUser()} className={style.user}>
-                  <img
-                     width="200px"
-                     height="200px"
-                     src="https://repository-images.githubusercontent.com/533675441/a6563895-c324-486c-a6d8-95c81c7242cf"
-                  />
                   <img src={userImage} />
                </div>
             </div>

@@ -13,7 +13,7 @@
    -webkit-box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
    -moz-box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
    box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
-   position: relative;
+   position: fixed;
    z-index: 101;
 }
 .wrap {
@@ -33,6 +33,15 @@
    align-items: center;
    justify-content: center;
    gap: 10px;
+}
+@media (max-width:425px) {
+      .left{
+         display: none;
+
+      }
+      #textf{
+         display: none;
+      }
 }
 .nav {
    display: flex;
